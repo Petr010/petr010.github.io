@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'consolas', sans-serif;
+}
+
+.navbar {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar__logo {
+    background-color: #cf2325;
+    background-image: linear-gradient(to top, #00ff00 0%, #ff4545 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.fa-gem {
+    margin-right: 0.5rem;
+}
+
+.navbar_menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.background-container {
+    display: flex;
+    width: 200%; /* Allows both images to fit side by side */
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: scrollBackground 0.5s linear infinite;
+}
+
+.background-image {
+    width: 50%; /* Each background div takes half of 200% */
+    height: 100%;
+    background-image: url('/images/img1.png'); /* Replace with your image */
+    background-size: cover;
+    opacity: 0.5; /* Set the transparency */
+}
+
+@keyframes scrollBackground {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
