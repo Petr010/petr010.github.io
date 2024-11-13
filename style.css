@@ -67,7 +67,7 @@
 .background-image {
     width: 50%; /* Each background div takes half of 200% */
     height: 100%;
-    background-image: url('/images/img1.png'); /* Replace with your image */
+    background-image: url('/images/img2.jpg'); /* Replace with your image */
     background-size: cover;
     opacity: 0.5; /* Set the transparency */
 }
