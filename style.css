@@ -7,20 +7,22 @@
 
 .navbar {
     background-color: black;
-    height: 80px;
+    width: 200px; /* Adjust width as needed */
+    height: 100vh; /* Full viewport height */
     display: flex;
-    justify-content: center;
-    align-items:  center;
-    font-size: 1.2rem;
-    position: sticky;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally within the navbar */
+    position: fixed; /* Fix the navbar to the left side of the viewport */
     top: 0;
+    left: 0;
     z-index: 999;
+    font-size: 1.2rem;
 }
 
 .navbar__container {
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    height: 0px;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
@@ -29,8 +31,8 @@
 }
 
 #navbar__logo {
-    background-color: #cf2325;
-    background-image: linear-gradient(to top, #00ff00 0%, #ff4545 100%);
+    background-color: #ffffff;
+    background-image: linear-gradient(to top, #ffffff 0%, #929292 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -47,11 +49,30 @@
     margin-right: 0.5rem;
 }
 
-.navbar_menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    text-align: center;
+.navbar__menu li {
+    margin: 20px 0;
+}
+
+.navbar__menu a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.2rem; /* Default size of links */
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    display: inline-block;
+}
+
+/* Hover effect to match the logo’s font size */
+.navbar__menu a:hover {
+    transform: scale(1.67); /* Scale up to match the 2rem logo size */
+}
+
+/* Optional: Combine the grow effect with the blinking cursor */
+.navbar__menu a:hover::after {
+    content: '|';
+    position: absolute;
+    right: -10px; /* Adjust as needed */
+    animation: blink 0.7s steps(1) infinite;
 }
 
 .background-container {
@@ -61,15 +82,25 @@
     position: fixed;
     top: 0;
     left: 0;
-    animation: scrollBackground 0.5s linear infinite;
+    animation: scrollBackground 10s linear infinite;
 }
 
 .background-image {
     width: 50%; /* Each background div takes half of 200% */
     height: 100%;
-    background-image: url('/images/img2.jpg'); /* Replace with your image */
+    background-image: url('/images/bg1.jpg'); /* Replace with your image */
     background-size: cover;
     opacity: 0.5; /* Set the transparency */
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
 }
 
 @keyframes scrollBackground {
