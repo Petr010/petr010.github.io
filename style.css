@@ -2,12 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'consolas', sans-serif;
+    font-family: 'Consolas', monospace, comic sans MS;
 }
 
 .navbar {
     background-color: black;
-    width: 200px; /* Adjust width as needed */
+    width: 300px; /* Adjust width as needed */
     height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column; /* Stack items vertically */
@@ -19,34 +19,65 @@
     font-size: 1.2rem;
 }
 
-.navbar__container {
+/* .navbar__container {
     display: flex;
     justify-content: space-between;
-    height: 0px;
+    height: 20px;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 50px;
+} */
+
+.navbar__terminal {
+    background-color: #333; /* Dark grey background */
+    color: #ccc; /* Light grey text */
+    width: 100%; /* Full width of the navbar */
+    padding: 10px;
+    font-family: 'consolas', monospace; /* Monospace font for terminal look */
+    font-size: 0.9rem;
+    text-align: left;
+    border-bottom: 1px solid #555; /* Slight border for separation */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between terminal text and close button */
+}
+
+.close-btn {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 1.2rem;
+}
+
+.reopen-box {
+    display: none; /* Hidden initially */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #333;
+    color: #ccc;
+    padding: 5px 10px;
+    font-family: 'consolas', monospace; /* Monospace font for terminal look */
+    cursor: pointer;
+    border: 5px solid #000000;
+    border-radius: 3px;
+    opacity: 0.75; /* Set the transparency */
 }
 
 #navbar__logo {
+    padding: 20px 0px 0px 0px;
     background-color: #ffffff;
     background-image: linear-gradient(to top, #ffffff 0%, #929292 100%);
     background-size: 100%;
     -webkit-background-clip: text;
-    -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    display: flex;
+    display: inline-block;
     align-items: center;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
-}
-
-.fa-gem {
-    margin-right: 0.5rem;
+    position: relative; /* Required for ::after positioning */
 }
 
 .navbar__menu li {
@@ -67,7 +98,6 @@
     transform: scale(1.67); /* Scale up to match the 2rem logo size */
 }
 
-/* Optional: Combine the grow effect with the blinking cursor */
 .navbar__menu a:hover::after {
     content: '|';
     position: absolute;
@@ -83,6 +113,7 @@
     top: 0;
     left: 0;
     animation: scrollBackground 10s linear infinite;
+    z-index: -1; /* Make sure it stays behind other elements */
 }
 
 .background-image {
@@ -91,6 +122,19 @@
     background-image: url('/images/bg1.jpg'); /* Replace with your image */
     background-size: cover;
     opacity: 0.5; /* Set the transparency */
+}
+
+/* for logo */
+.cursor {
+    background-color: #ffffff;
+    background-image: linear-gradient(to top, #ffffff 0%, #929292 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    right: -20px; /* Adjust as needed */
+    animation: blink 0.7s steps(1) infinite;
+    font-weight: bold;
+    position: absolute;
 }
 
 /* Blinking cursor animation */
