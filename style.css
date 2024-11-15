@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Consolas', monospace, comic sans MS;
 }
 
 .navbar {
@@ -16,7 +15,17 @@
     top: 0;
     left: 0;
     z-index: 999;
+    font-family: 'Consolas', monospace, Comic Sans MS;
     font-size: 1.2rem;
+    opacity: 1; /* Fully visible */
+    transform: scale(1) translateX(0); /* Scale up to normal size and move to the visible position */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for scale, translate, and opacity */
+}
+
+/* When the navbar is shown (after toggling) */
+.navbar.closed {
+    opacity: 0; 
+    transform: scale(0.7) translateX(200%) translateY(100%); /* Start from off-screen and scaled down */
 }
 
 /* .navbar__container {
@@ -51,7 +60,7 @@
 }
 
 .reopen-box {
-    display: none; /* Hidden initially */
+    display: block; /* Hidden initially */
     position: fixed;
     top: 10px;
     left: 10px;
@@ -62,6 +71,7 @@
     cursor: pointer;
     border: 5px solid #000000;
     border-radius: 3px;
+    z-index: 500;
     opacity: 0.75; /* Set the transparency */
 }
 
@@ -85,7 +95,7 @@
 }
 
 .navbar__menu a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     position: relative;
     font-size: 1.2rem; /* Default size of links */
@@ -121,7 +131,7 @@
     height: 100%;
     background-image: url('/images/bg1.jpg'); /* Replace with your image */
     background-size: cover;
-    opacity: 0.5; /* Set the transparency */
+    opacity: 0.25; /* Set the transparency */
 }
 
 /* for logo */
@@ -135,6 +145,53 @@
     animation: blink 0.7s steps(1) infinite;
     font-weight: bold;
     position: absolute;
+}
+
+.content {
+    padding: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform .3s ease; /* Smooth transition */
+    z-index: 1;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 2rem;
+}
+.contact__menu p {
+    color: #808080; 
+    padding: 20px 0px 0px 100px;
+    font-style: italic;
+}
+
+.contact__menu a {
+    color: #333; /* Set the text color of the link */
+    text-decoration: none; 
+}
+
+.contact__menu li {
+    padding: 10px 0px 0px 0px;
+    list-style-type: none;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.contact__menu a:hover {
+    color: #7700ff; /* Change the link color when hovered */
+}
+
+/* for contact/email-copying */
+.copy-notification {
+    display: none; /* Hide by default */
+    color: green;
+    margin-left: 20px;
+    animation: fadeOut 2.5s forwards; /* Smooth fade-out */
+    font-family: 'Consolas', cursive, sans-serif;
+    position: absolute;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; display: none; }
 }
 
 /* Blinking cursor animation */
