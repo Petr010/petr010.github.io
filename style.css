@@ -154,7 +154,7 @@
     align-items: center;
     transition: transform .3s ease; /* Smooth transition */
     z-index: 1;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS', Comic Neue, consolas;
     font-size: 2rem;
 }
 .contact__menu p {
