@@ -269,7 +269,7 @@
     position: absolute;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 400px) {
     /* Adjust padding for smaller screens */
     .content {
         padding: 20px 20px 0px 20px;
