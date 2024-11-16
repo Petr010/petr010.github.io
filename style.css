@@ -269,10 +269,10 @@
     position: absolute;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
     /* Adjust padding for smaller screens */
     .content {
-        padding: 20px 10px;
+        padding: 20px 20px 0px 20px;
         font-size: 1.5rem; /* Adjust font size for mobile */
     }
 
