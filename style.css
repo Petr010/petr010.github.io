@@ -341,7 +341,7 @@
     position: absolute;
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
     /* Adjust padding for smaller screens */
     .content-image {
 
@@ -382,7 +382,7 @@
         font-size: .9rem; /* Smaller description for mobile */
         color: #333; /* Darker color for better contrast */
     }
-}
+}*/
 
 @keyframes fadeOut {
     0% { opacity: 1; }
