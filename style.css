@@ -341,7 +341,7 @@
     position: absolute;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     /* Adjust padding for smaller screens */
     .content-image {
 
@@ -354,9 +354,6 @@
     /* .content {
         padding: 20px 20px 0px 20px;
         font-size: 1.5rem; /* Adjust font size for mobile */
-     
-
-    */
 
     .link-box {
         flex-direction: column; /* Stack items vertically on mobile */
