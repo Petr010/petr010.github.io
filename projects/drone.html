@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTr's Projects</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/c6bdd07d00.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__terminal">
+            <p><span style="color: white;">❯_ </span>nav terminal</p>
+            <!-- Use the navbar__toggle button for toggling -->
+            <span class="navbar__toggle close-btn" onclick="toggleNavbar()">X</span>
+        </div>
+
+        <div><a href="/" id="navbar__logo">C:PeTr> </a></div>
+        
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/projects.html" class="navbar__links"> Projects </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/highlights.html" class="navbar__links"> C:\Highlights> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/fun.html" class="navbar__links"> C:\Fun!> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/contact.html" class="button"> C:\Contact_Me> </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Reopen button, hidden initially -->
+    <div class="navbar__toggle reopen-box" id="reopenBox" onclick="toggleNavbar()">>_</div>
+
+    <div class="background-container">
+        <div class="background-image"></div>
+        <div class="background-image"></div>
+    </div>
+    <div class = "content">
+        <h1>Drone</h1> 
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/projects.jpg" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/projects.jpg" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/drone/0.jpg" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/drone/1.jpg" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="../images/drone/2.jpg" alt="Thumbnail 4" class="thumbnail" data-index="3">
+                <img src="../images/drone/4.jpg" alt="Thumbnail 6" class="thumbnail" data-index="5">
+                <img src="../images/drone/5.jpg" alt="Thumbnail 7" class="thumbnail" data-index="6">
+                <img src="../images/drone/6.jpg" alt="Thumbnail 8" class="thumbnail" data-index="7">
+                <img src="../images/drone/7.jpg" alt="Thumbnail 9" class="thumbnail" data-index="8">
+            </div>
+        </div>
+        <p class="content_p_main"> > I built this drone as a decoration for my 2024 graduation cap.  It uses the xing2 2207 2755kv motors to drive the 5in. props, powered by a 4s 120c LiPo battery.  The drone was configured in the Betaflight software.  The body was 3D printed and zip tied together and to the cap.</p> 
+        <p class="content_p_main"> > As an extra feature, a trap door was installed in the cap to release confetti.  A servo was controlled by a toggle switch on the transmitter, which would pull on a fishing line releasing the trap door.</p>       
+        <p class="content_p_main"> > The drone itself flew well, however, there was too much flex within the 3D-printed body which caused the PID system to be unable to correct for any misalignments as corrections caused different alignment errors.  To correct this, the PID sensitivity could have been tuned down, the maximum throttle could have been diminished, or a new frame could have been reinforced with carbon fiber for stability. The drone had fallen from several meters in the sky, causing irreparable damage before corrections could be made.  Future attempts will be made. </p>       
+        <p class="content_p_main"> > Some challenges to note was trying to balance the weight within the drone, I figured that if I couldn't balance it on my head, it would be difficult for the drone to balance in the air.  Betaflight is an intuitive tool, however, only some of the older versions had the specific functionalities to make my drone work, for example, I had to use a version that was 3 revisions old to have the drone cooperate with my transmitter/receiver.  Since the frame is haphazardly strapped to a flimsy graduation cap, the calibration would always drift by some amount.</p>       
+        <p class="content_p_main"> > Overall, the project was highly enjoyable, and if I had the chance to do it again, I definitely would!</p>
+        <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/Hc9uI06N1gw" 
+              title="I Turned My Graduation Cap Into A DRONE!!" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>    
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="../app.js"></script>
+</body>
+</html>

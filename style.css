@@ -29,8 +29,10 @@
 
 /* When the navbar is shown (after toggling) */
 .navbar.closed {
+    transform-origin: 20% 8%;
     opacity: 0; 
-    transform: scale(0.7) translateX(200%) translateY(100%); /* Start from off-screen and scaled down */
+    transform: scale(0) translateX(-100%) translateY(-100%); /* Start from off-screen and scaled down */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for scale, translate, and opacity */
 }
 
 .navbar__terminal {
@@ -116,7 +118,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    animation: scrollBackground 10s linear infinite;
+    animation: scrollBackground 20s linear infinite;
     z-index: -1; /* Make sure it stays behind other elements */
 }
 
@@ -154,20 +156,21 @@
     text-align: center; /* Center text */
 }
 
-/* for homepage */
-.home_p_main {
+/* for contentpage */
+.content_p_main {
     color: #000000; 
     padding:0px 0px 20px 0px;
+    font-size: 1.5rem;
 }
 
-.home_p_2nd {
+.content_p_2nd {
     font-style: italic;
     color: #333;
     padding:15px 0px 25px 0px;
     font-size: 1.25rem;
 }
 
-.home__menu {
+.content__menu {
     list-style: none; /* Remove default list styles */
     padding: 20px;
     margin: 0;
@@ -177,15 +180,15 @@
     z-index: 500;
 }
 
-.home__item {
+.content__item {
     width: 100%; /* Make each box span full width */
 }
 
-.home__links {
+.content__links {
     text-decoration: none; /* Remove underline from links */
     color: inherit; /* Inherit text color */
 }
-.home-image {
+.content-image {
 
     height: 300px; /* Set height of image */
     margin: 20px; /* Space between image and text */
@@ -193,7 +196,33 @@
     box-shadow: 0px 4px 8px rgba(119, 0, 255, 0.2);
 }
 
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Optional: limit the max width */
+    margin: 0 auto; /* Center the video horizontally */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (height / width = 9 / 16 = 0.5625) */
+  }
+  
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove iframe border */
+    border-radius: 10px;
+}
 
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: none; /* Remove iframe border */
+    border-radius: 10px;
+  }
+  
 /* for link boxes*/
 .link-box {
     display: flex;
@@ -235,6 +264,49 @@
     height: 100%; /* Set height of image */
 }
 
+/* /project/carousel */
+
+.carousel-main {
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#current-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 1s ease; /* Smooth fade effect */
+}
+
+.carousel-thumbnails {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to a new row */
+  gap: 10px; /* Space between images */
+  justify-content: center; /* Center thumbnails horizontally */
+  max-width: 600px; /* Optional: limit the width of the thumbnail section */
+}
+
+.thumbnail {
+  width: 100px;
+  height: 75px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.thumbnail:hover, .thumbnail.active {
+  opacity: 1;
+  transform: scale(1.1);
+  border: 2px solid #7700ff;
+} 
 
 /*contact*/
 
@@ -269,18 +341,22 @@
     position: absolute;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     /* Adjust padding for smaller screens */
-    .home-image {
-        height: 150px; /* Set height of image */
+    .content-image {
+
+        height: 200px; /* Set height of image */
         margin: 20px; /* Space between image and text */
         border-radius: 5px; /* Optional: round the image edges */
         box-shadow: 0px 4px 8px rgba(119, 0, 255, 0.2);
     }
-    .content {
-        padding: 20px 10px;
-        font-size: 1rem; /* Adjust font size for mobile */
-    }
+
+    /* .content {
+        padding: 20px 20px 0px 20px;
+        font-size: 1.5rem; /* Adjust font size for mobile */
+     
+
+    */
 
     .link-box {
         flex-direction: column; /* Stack items vertically on mobile */
@@ -289,22 +365,24 @@
     }
 
     .link-image {
-        width: 150px; /* Resize image */
-        height: 150px; /* Resize image */
+        width: 100px; /* Resize image */
+        height: 100px; /* Resize image */
         margin-bottom: 15px; /* Space between image and text */
+        border-radius: 5px; /* Optional: round the image edges */
     }
 
     .link-content {
-        align-items: center; /* Center content for smaller screens */
-        text-align: center;
+        display: flex;
+        flex-direction: column; /* Stack title and description vertically */
+        text-align: left;
     }
 
     .link-title {
-        font-size: 1.5rem; /* Smaller title for mobile */
+        font-size: 1.2rem; /* Smaller title for mobile */
     }
 
     .link-description {
-        font-size: 1.2rem; /* Smaller description for mobile */
+        font-size: .9rem; /* Smaller description for mobile */
         color: #333; /* Darker color for better contrast */
     }
 }
