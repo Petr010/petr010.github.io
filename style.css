@@ -201,6 +201,7 @@
     width: 100%;
     max-width: 800px; /* Optional: limit the max width */
     margin: 0 auto; /* Center the video horizontally */
+    margin-bottom: 20px;
     padding-top: 56.25%; /* 16:9 Aspect Ratio (height / width = 9 / 16 = 0.5625) */
   }
   
@@ -212,6 +213,7 @@
     height: 100%;
     border: none; /* Remove iframe border */
     border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(119, 0, 255, 0.2);
 }
 
 .video-container video {
@@ -221,6 +223,7 @@
     width: 100%;
     border: none; /* Remove iframe border */
     border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(119, 0, 255, 0.2);
   }
   
 /* for link boxes*/
@@ -240,10 +243,11 @@
 }
 
 .link-image {
-    width: 200px; /* Set width of image */
+    width: 200px;
     height: 200px; /* Set height of image */
     margin-right: 20px; /* Space between image and text */
     border-radius: 5px; /* Optional: round the image edges */
+    object-fit: cover;
 }
 
 .link-content {
