@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTr's Projects</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/c6bdd07d00.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__terminal">
+            <p><span style="color: white;">❯_ </span>nav terminal</p>
+            <!-- Use the navbar__toggle button for toggling -->
+            <span class="navbar__toggle close-btn" onclick="toggleNavbar()">X</span>
+        </div>
+
+        <div><a href="/" id="navbar__logo">C:PeTr> </a></div>
+        
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/projects.html" class="navbar__links"> Projects </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/highlights.html" class="navbar__links"> C:\Highlights> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/fun.html" class="navbar__links"> C:\Fun!> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/contact.html" class="button"> C:\Contact_Me> </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Reopen button, hidden initially -->
+    <div class="navbar__toggle reopen-box" id="reopenBox" onclick="toggleNavbar()">>_</div>
+
+    <div class="background-container">
+        <div class="background-image"></div>
+        <div class="background-image"></div>
+    </div>
+    <div class = "content">
+        <h1>Keyboard From Scratch</h1> 
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/keyboard/0.JPG" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/keyboard/0.JPG" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/keyboard/1.JPG" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/keyboard/2.JPG" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="../images/keyboard/3.jpg" alt="Thumbnail 4" class="thumbnail" data-index="3">
+                <img src="../images/keyboard/4.JPG" alt="Thumbnail 5" class="thumbnail" data-index="4">
+                <img src="../images/keyboard/5.jpg" alt="Thumbnail 6" class="thumbnail" data-index="5">
+            </div>
+        </div>
+        <p class="content_p_main"> > </p> 
+        <p class="content_p_main"> > </p> 
+        <p class="content_p_main"> > </p> 
+        <p class="content_p_main"> > </p> 
+        <p class="content_p_main"> > </p> 
+        <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/BFg9T4e06Q0"
+              title="Keyboard from scratch" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>    
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="../app.js"></script>
+</body>
+</html>
