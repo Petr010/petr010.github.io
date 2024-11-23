@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTr's Projects</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/c6bdd07d00.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__terminal">
+            <p><span style="color: white;">❯_ </span>nav terminal</p>
+            <!-- Use the navbar__toggle button for toggling -->
+            <span class="navbar__toggle close-btn" onclick="toggleNavbar()">X</span>
+        </div>
+
+        <div><a href="/" id="navbar__logo">C:PeTr> </a></div>
+        
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/projects.html" class="navbar__links"> C:\Projects> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/highlights.html" class="navbar__links"> Highlights </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/fun.html" class="navbar__links"> C:\Fun!> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/contact.html" class="button"> C:\Contact_Me> </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Reopen button, hidden initially -->
+    <div class="navbar__toggle reopen-box" id="reopenBox" onclick="toggleNavbar()">>_</div>
+
+    <div class="background-container">
+        <div class="background-image"></div>
+        <div class="background-image"></div>
+    </div>
+    <div class = "content">
+        <h1>Self Driving Car</h1> 
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/muppetMobile/0.jpg" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/muppetMobile/0.jpg" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/muppetMobile/1.jpg" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/muppetMobile/2.jpg" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="../images/muppetMobile/3.png" alt="Thumbnail 4" class="thumbnail" data-index="3">
+                <img src="../images/muppetMobile/4.jpg" alt="Thumbnail 6" class="thumbnail" data-index="4">
+                <img src="../images/highlights.jpg" alt="Thumbnail 7" class="thumbnail" data-index="5">
+                <img src="../images/muppetMobile/5.jpg" alt="Thumbnail 8" class="thumbnail" data-index="6">
+            </div>
+        </div>
+        <p class="content_p_main"> > This was our senior design project for Rutgers ECE.  The goal was to create an affordable self-driving vehicle by placing add-ons to a pre-built vehicle.  It was also to judge if the current market on autonomous navigation was fair for consumers.  The robot could serve a self-delivery service that can go from any area to any room as opposed to a hard-coded route, which can be tedious/difficult to program.</p> 
+        <p class="content_p_main"> > The original car was purchased off of Amazon for its low price ($100) and the ability to be remote controlled.  The remote control was hacked with an Arduino nano to make it possible to communicate with the laptop.  The laptop was purchased used from eBay ($75).  An elevation column was made for the LiDAR ($80) to properly map the room and to sense most obstacles.</p> 
+        <p class="content_p_main"> > ROS2 humble was used to control the car.  Gazebo and the LiDAR were used to map and simulate the area for NAV2 to pre-plan courses.</p> 
+        <p class="content_p_main"> > We were unable to accomplish all of our goals within the timeframe given.  We were able to get the computer to control the car based on inputs from NAV2 with collision avoidance, however, not enough configuration was done to account for the communication delays and the momentum of the car.  We had other features such as using a webcam for computer vision to recognize certain locations and obstacles that the LiDAR could not pick up.  We wanted to also create goal-posts from room to room which could be selected via web-browser.   If another month's time was allowed, the configurations would have been better calibrated and the aforementioned features could have been implemented. </p> 
+        <p class="content_p_main"> > The project overall was a success given the allowed time for the scope of the project, and the budget of roughly $300. It allowed our team to place 15th/~45 teams</p> 
+        <div class="video-container">
+            <video controls>
+              <source src="../images/muppetMobile/e.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+        </div>  
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTr's Projects</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/c6bdd07d00.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__terminal">
+            <p><span style="color: white;">❯_ </span>nav terminal</p>
+            <!-- Use the navbar__toggle button for toggling -->
+            <span class="navbar__toggle close-btn" onclick="toggleNavbar()">X</span>
+        </div>
+
+        <div><a href="/" id="navbar__logo">C:PeTr> </a></div>
+        
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/projects.html" class="navbar__links"> C:\Projects> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/highlights.html" class="navbar__links"> Highlights </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/fun.html" class="navbar__links"> C:\Fun!> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/contact.html" class="button"> C:\Contact_Me> </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Reopen button, hidden initially -->
+    <div class="navbar__toggle reopen-box" id="reopenBox" onclick="toggleNavbar()">>_</div>
+
+    <div class="background-container">
+        <div class="background-image"></div>
+        <div class="background-image"></div>
+    </div>
+    <div class = "content">
+        <h1>HackNJIT</h1> 
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/hacknjit/0.jpg" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/hacknjit/0.jpg" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/hacknjit/1.png" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/hacknjit/2.png" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="../images/hacknjit/3.JPG" alt="Thumbnail 4" class="thumbnail" data-index="3">
+            </div>
+        </div>
+        <p class="content_p_main"> > This was my first Hackathon, the hardware hackathon at NJIT.  Here I joined a random team of 4 and decided to build a vehicle attachment to sense/measure/fill potholes.</p>
+        <p class="content_p_main"> > At this event, I was able to meet amazing people and peer into their thought processes as they made amazing creations within 24 hours.</p>
+        <p class="content_p_main"> > This was a most enjoyable experience, and I hope to find more in the near future.</p>
+        <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/ZcIIkioS9RA" 
+              title="I Did a Hardware Hackathon!!" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>    
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="../app.js"></script>
+</body>
+</html>

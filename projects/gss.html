@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTr's Projects</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/c6bdd07d00.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__terminal">
+            <p><span style="color: white;">❯_ </span>nav terminal</p>
+            <!-- Use the navbar__toggle button for toggling -->
+            <span class="navbar__toggle close-btn" onclick="toggleNavbar()">X</span>
+        </div>
+
+        <div><a href="/" id="navbar__logo">C:PeTr> </a></div>
+        
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/projects.html" class="navbar__links"> Projects </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/highlights.html" class="navbar__links"> C:\Highlights> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/fun.html" class="navbar__links"> C:\Fun!> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/contact.html" class="button"> C:\Contact_Me> </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Reopen button, hidden initially -->
+    <div class="navbar__toggle reopen-box" id="reopenBox" onclick="toggleNavbar()">>_</div>
+
+    <div class="background-container">
+        <div class="background-image"></div>
+        <div class="background-image"></div>
+    </div>
+    <div class = "content">
+        <h1>NJ Governor STEM Scholars</h1> 
+        <h2>Filament Splicer</h2> 
+            <ul class="contact__menu">
+                <li class="contact__item">
+                    <div class="link-box">
+                        <a href="https://sites.google.com/view/filamentsplicer/home?authuser=4" class="content__links"> Project Website </a>
+                    </div>
+                </li>
+            </ul>           
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/gss/0.JPG" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/gss/0.jpg" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/gss/1.jpg" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/gss/2.png" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="../images/gss/22.jpg" alt="Thumbnail 3.5" class="thumbnail" data-index="3">
+                <img src="../images/gss/3.png" alt="Thumbnail 4" class="thumbnail" data-index="4">
+                <img src="../images/gss/4.png" alt="Thumbnail 6" class="thumbnail" data-index="5">
+                <img src="../images/gss/5.png" alt="Thumbnail 7" class="thumbnail" data-index="6">
+                <img src="../images/gss/6.png" alt="Thumbnail 8" class="thumbnail" data-index="7">
+                <img src="../images/gss/7.jpg" alt="Thumbnail 9" class="thumbnail" data-index="8">
+                <img src="../images/gss/8.jpg" alt="Thumbnail 10" class="thumbnail" data-index="9">
+                <img src="../images/gss/9.png" alt="Thumbnail 11" class="thumbnail" data-index="10">
+                <img src="../images/gss/10.png" alt="Thumbnail 12" class="thumbnail" data-index="11">
+            </div>
+        </div>
+        <p class="content_p_main"> > During the academic year of 21-22, I participated as a New Jersey Governor STEM Scholar.  This program would select an array of University students to lead/mentor groups of highschool level students from all parts of New Jersey. 10 teams would form with 2 University students per team to design a research project.  10 highschool students would be assigned to each team to learn various areas of STEM to complete the research laid out by their mentors.</p> 
+        <p class="content_p_main"> > Early into my college career, I began 3D-printing, of which I noticed an excess amount of filament being wasted between rolls.  To reduce possible waste in scrap filament, I designed the filament splicer, a device to join old and new filaments.</p> 
+        <p class="content_p_main"> > The final splicer was able to join two pieces of filament together, however, it was found to succeed the best with PLA filament. PETG had a much lower glass-transition period, so it starts flowing at much lower temperatures while remaining cool enough not to melt, this caused deformations during splicing.  ABS was also tested but due to the high temperatures for ABS, it did not bond well.  After splicing the filament would become less flexible and more brittle.</p> 
+        <p class="content_p_main"> > Looking back retrospectively, there is no longer a real need for such a device.  Most 3D-printers have advanced to the point where they have runout sensors, some can use the full length of the remaining printer, and advanced attachments such as the Bambulabs AMS now exist for precise multicolored 3D-Printing (one of the possible applications of our splicer).</p> 
+        <p class="content_p_main"> > Between myself and my co-captain, Xavier, we could have completed the project well within the time constraints of the program.  However, the main point of the program is for us to pass down our knowledge and skills to the highschoolers.  At the beginning of the project, most of the students had never touched an Arduino, let alone program one, so we took these eager individuals and instilled in them the ability to code, CAD, prototype, develop, solder, redesign, troubleshoot, and teamwork, all essential in STEM.  I am proud to have worked with this group.</p> 
+        <p class="content_p_main"> > For more information on the project and the team, please visit the link above!</p> 
+        <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/HY2Xxn8xZaQ"
+              title="gss filament splicer" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+        </div>  
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="../app.js"></script>
+</body>
+</html>
