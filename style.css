@@ -226,6 +226,58 @@
     box-shadow: 0px 4px 8px rgba(119, 0, 255, 0.2);
   }
   
+.fun-video-container {
+    z-index: 750;
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Optional: limit the max width */
+    margin: 0 auto; /* Center the video horizontally */
+    margin-bottom: 20px;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (height / width = 9 / 16 = 0.5625) */
+}
+  
+
+.fun-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: none; /* Remove iframe border */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(119, 0, 255, 0.2);
+  }
+
+#textBox {
+    display: none;
+    position: relative; /* Ensure proper stacking context */
+    z-index: 600;
+    top: -350px;
+    font-family: 'Comic Sans MS', 'Comic Neue', consolas;
+    width: 100%;
+    max-width: 600px; /* Optional: limit the max width */
+    padding: 20px;
+    background: rgba(128, 128, 128, 0.25); /* Grey background with 0.25 opacity */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 2rem;
+    outline: 4px solid rgb(0, 0, 0); /* Red outline with 5px width */
+  }
+
+#textContent {
+    display: flex;
+    flex-direction: column; /* Stack title and description vertically */
+    text-align: left;
+
+}
+
+#textImage{
+    width: 300px;
+    height: 250px; /* Set height of image */
+    margin-right: 20px; /* Space between image and text */
+    border-radius: 5px; /* Optional: round the image edges */
+    object-fit: cover;
+  }
+
 /* for link boxes*/
 .link-box {
     display: flex;
@@ -235,6 +287,7 @@
     border-radius: 10px; /* Rounded corners */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effects */
     cursor: pointer; /* Make entire box clickable */
+    outline: 4px solid rgb(0, 0, 0); /* outline with 5px width */
 }
 
 .link-box:hover {
@@ -312,6 +365,25 @@
   transform: scale(1.1);
   border: 2px solid #7700ff;
 } 
+
+#playButton {
+    font-family: 'Comic Sans MS', 'Comic Neue', consolas;
+    display: flex;
+    align-items: flex-start; /* Align content to the top */
+    padding: 20px;
+    margin: 0px 20px 30px 20px;
+    background: rgba(128, 128, 128, 0.25); /* Grey background with 0.25 opacity */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effects */
+    cursor: pointer; /* Make entire box clickable */
+    font-size: 5rem;
+}
+
+#playButton:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0px 4px 8px rgba(119, 0, 255, 0.2); /* Add shadow on hover */
+    color: #7700ff; /* Change the link color when hovered */
+}
 
 /*contact*/
 
