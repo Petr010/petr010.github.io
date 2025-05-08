@@ -48,45 +48,45 @@ document.getElementById("navbar__logo").addEventListener("mouseleave", function(
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const mainImage = document.getElementById("current-image");
-    const thumbnails = document.querySelectorAll(".thumbnail");
-    let currentIndex = 0;
-    let interval;
+    document.querySelectorAll(".carousel").forEach(carousel => {
+      const mainImage = carousel.querySelector(".carousel-main img");
+      const thumbnails = carousel.querySelectorAll(".carousel-thumbnails .thumbnail");
+      let currentIndex = 0;
+      let interval;
   
-    const updateCarousel = (index) => {
-      // Update the main image source
-      const newSrc = thumbnails[index].src;
-      mainImage.style.opacity = 0; // Fade out current image
-      setTimeout(() => {
-        mainImage.src = newSrc; // Change image after fade out
-        mainImage.style.opacity = 1; // Fade in new image
-      }, 500); // Sync with fade-out duration (500ms)
+      const updateCarousel = (index) => {
+        const newSrc = thumbnails[index].src;
+        mainImage.style.opacity = 0;
+        setTimeout(() => {
+          mainImage.src = newSrc;
+          mainImage.style.opacity = 1;
+        }, 500);
   
-      // Update the active thumbnail
-      thumbnails.forEach((thumb) => thumb.classList.remove("active"));
-      thumbnails[index].classList.add("active");
-    };
+        thumbnails.forEach((thumb) => thumb.classList.remove("active"));
+        thumbnails[index].classList.add("active");
+      };
   
-    const startCarousel = () => {
-      interval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % thumbnails.length;
-        updateCarousel(currentIndex);
-      }, 6900);
-    };
+      const startCarousel = () => {
+        interval = setInterval(() => {
+          currentIndex = (currentIndex + 1) % thumbnails.length;
+          updateCarousel(currentIndex);
+        }, 6900);
+      };
   
-    thumbnails.forEach((thumbnail, index) => {
-      thumbnail.addEventListener("click", () => {
-        clearInterval(interval); // Stop automatic cycling
-        currentIndex = index;
-        updateCarousel(currentIndex);
-        startCarousel(); // Restart the carousel
+      thumbnails.forEach((thumbnail, index) => {
+        thumbnail.addEventListener("click", () => {
+          clearInterval(interval);
+          currentIndex = index;
+          updateCarousel(currentIndex);
+          startCarousel();
+        });
       });
-    });
   
-    // Initialize carousel
-    updateCarousel(currentIndex);
-    startCarousel();
+      updateCarousel(currentIndex);
+      startCarousel();
+    });
   });
+  
 
 function copyEmailToClipboard() {
     // Copy the email to the clipboard

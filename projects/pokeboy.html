@@ -92,10 +92,174 @@
         </div>  
         
         <p class="content_p_heading"> Setting Up The Pi </p>  
-        <p class="content_p_main"> > Below are 3 links, the first one allows you to download an excel spreadsheet containing a BOM of every necessary component other than tools and wires. (you might have to port it to google sheets) </p>   
-        
+        <p class="content_p_main"> > We can't solder all of the headers onto the Pi because we need to leave room for the other wires later, leave the first row clear, solder on the next 6 rows, leave the next one clear, then solder on the next 5 rows and leave the rest clear.</p>
+
+        <div class="carousel-main">
+            <img id="current-image" src="../images/pokeboy/IMG_9365.JPG" alt="Current Slide">
+        </div>
+
+        <p class="content_p_main"> > One of my biggest concerns with this project is, "how long will it last before things get outdated?"  There will likely be newer Pi's and firmware, so I suggest testing them first before we assemble anything.  As of right now, I used a raspberry pi zero 2W and retropie-buster 4.8.  (You might be able to use an orangepie and other fruits, but their installations for retropie might require an O.S. thus will have varying steps from this guide).</p>   
+        <p class="content_p_main"> > As of right now, you need to install retropie using an externally downloaded image to apply a custom profile (necessary for enabling SSH on install) You can download retropie and the Raspberry Pi imager from the link below: </p>   
+
+        <div class="link-box-container">
+            <a href="https://www.raspberrypi.com/software/" class="link-box-pcbway">
+                <p>Raspberry Pi Imager</p>
+            </a>
+            <a href="https://retropie.org.uk/download/" class="link-box-pcbway">
+                <p>Retropie</p>
+            </a>
+        </div>  
            
-       
+        <p class="content_p_main"> > Open the imager and enter the advance menu by pressing CTRL+SHFT+X.  In the services tab, enable SSH, then in the general tab, set the hostname and username to pokeboy, set your own password.  Uncer "Configure wireless LAN", enter your wifi name in SSID, then the password.  Hit save (CTRL+X).</p>
+        <p class="content_p_main"> > In the imager, select the Raspberry Pi Zero 2W as the device.  For operating system, select "Use custom" at the bottom and select the image that you downloaded.  Select your SD card as storage, hit "Next", then "Yes" to apply custom OS settings.</p>
+
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/pokeboy/r2.png" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/pokeboy/r2.png" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/pokeboy/r3.png" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/pokeboy/r1.png" alt="Thumbnail 3" class="thumbnail" data-index="2">
+            </div>
+        </div>
+        
+        <p class="content_p_main"> > Insert the SD card into the Pi and power it on, give it about 5mins to run any setup processes and find your network.  Then open a terminal like windows powershell, run:</p>
+        <p class="content_p_2nd">ping pokeboy.local</p>
+        <p class="content_p_main"> &nbsp;&nbsp;to make sure the Pi is on the same network as your PC, it should send some kind of reply back.</p>
+        <br>
+        <p class="content_p_main"> > To connect to the Pi, use: </p>
+        <p class="content_p_2nd">ssh pokeboy@pokeboy.local </p>
+        <p class="content_p_main"> &nbsp;&nbsp;You will be prompted to set up the fingerprint, type "yes", then enter your password to the Pi  </p>
+        
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/pokeboy/s1.png" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/pokeboy/s1.png" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/pokeboy/s2.png" alt="Thumbnail 2" class="thumbnail" data-index="1">
+            </div>
+        </div>
+
+        <p class="content_p_main"> > Next, we'll install and update the firmware to the Pi.  Run:</p>
+        <p class="content_p_2nd">sudo ./Retropie-Setup/retropie_setup.sh</p>
+        <p class="content_p_main"> &nbsp;&nbsp;then select the basic install, followed by the update afterwords </p>
+        <br>
+        <p class="content_p_main"> > Exit, then run the following two lines to finish updating everything under the sun and then some:</p>
+        <p class="content_p_2nd">sudo apt update</p>
+        <p class="content_p_2nd">sudo apt upgrade</p>
+
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/pokeboy/f2.png" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/pokeboy/f2.png" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/pokeboy/f1.png" alt="Thumbnail 2" class="thumbnail" data-index="1">
+            </div>
+        </div>
+
+        <p class="content_p_heading"> Display</p>
+        <p class="content_p_main"> > We'll install the drivers for the display next.  The LCD will likely come with a set of instructions, below are the commands required for the LCD I attached in the BOM *note, they have multiple variants of this screen, select the final command dependant on your variant*.</p>
+        <p class="content_p_2nd">sudo rm -rf LCD-show</p>
+        <p class="content_p_2nd">git clone https://github.com/goodtft/LCD-show.git</p>
+        <p class="content_p_2nd">chmod -R 755 LCD-show</p>
+        <p class="content_p_2nd">cd LCD-show/</p>
+        <p class="content_p_2nd">sudo ./MHS35-show  <strong>*OR*</strong> sudo ./LCD35-show <strong>*OR*</strong> other</p>
+        <p class="content_p_main"> > Disconnect the Pi, plug the display onto the Pi aligning the bottom headers (remember the top row should be missing), then power the Pi back on and reconnect with SSH.  The display should show a basic terminal.</p>
+        <p class="content_p_main"> > We want the emulator to launch from boot, so re-enter the startup menu, select configuration, and select the first option to startup emulation station at boot.  After the confirmation page, you can select ok -> cancel -> exit.</p>
+
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/pokeboy/l1.png" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/pokeboy/l1.png" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/pokeboy/IMG_9369.JPG" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/pokeboy/l2.png" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="../images/pokeboy/l3.png" alt="Thumbnail 4" class="thumbnail" data-index="3">
+                <img src="../images/pokeboy/l4.png" alt="Thumbnail 5" class="thumbnail" data-index="4">
+            </div>
+        </div>
+
+        <p class="content_p_heading"> Pinout Note</p>
+        <p class="content_p_main"> > The next steps, it might be helpful to have a breadboard, that way you can test the audio and button setups... or you can blindly trust these instructions because we're both just that good.</p>
+        <p class="content_p_main"> > Use the following photo to reference where the GPIO pins are (right click then "open image in new tab")</p>
+
+        <div class="carousel-main">
+            <img id="current-image" src="../images/pokeboy/pinout.jpg" alt="Current Slide">
+        </div>
+
+        <p class="content_p_heading"> Audio</p>
+        <p class="content_p_main"> > To setup audio, we need to enter the config file by running:</p>
+        <p class="content_p_2nd">sudo nano /boot/config.txt</p>
+        <p class="content_p_main"> &nbsp;&nbsp;then scroll to the bottom to add the following line:</p>
+        <p class="content_p_2nd">dtoverlay=audremap</p>
+        <p class="content_p_main"> &nbsp;&nbsp;this will automatically set the audio pin to GPIO 13.  You can then save and exit (CTRL+X).</p>
+        <p class="content_p_main"> > Then, run the following:</p>
+        <p class="content_p_2nd">sudo raspi-config</p>
+        <p class="content_p_main"> &nbsp;&nbsp;this opens a menu to set the default audio output, you want to select "System Options", "Audio", "Headphones".  After the confirmation page, you can cancel -> back -> finish.</p>
+        <p class="content_p_main"> > You can reboot with the "sudo reboot" command or just powerdown and turn the pi back in, remember to SSH back in.  From here, you can test the audio by temporarily wiring up the speaker directly to GPIO 13 and GND, then run the following line to play a test audio.</p>
+        <p class="content_p_2nd">aplay /usr/share/sounds/alsa/Front_Center.wav</p>
+
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/pokeboy/a1.png" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/pokeboy/a1.png" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/pokeboy/a2.png" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/pokeboy/IMG_9387.PNG" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="../images/pokeboy/IMG_9388.PNG" alt="Thumbnail 4" class="thumbnail" data-index="3">
+                <img src="../images/pokeboy/IMG_9389.PNG" alt="Thumbnail 5" class="thumbnail" data-index="4">
+                <img src="../images/pokeboy/a3.png" alt="Thumbnail 6" class="thumbnail" data-index="5">
+            </div>
+        </div>
+
+        <p class="content_p_heading"> GPIO Buttons</p>
+        <p class="content_p_main"> > We will be using retrogame to set our GPIO pins as button inputs.  Run the following two lines:</p>
+        <p class="content_p_2nd">curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/retrogame.sh > retrogame.sh</p>
+        <p class="content_p_2nd">sudo bash retrogame.sh</p>
+        <p class="content_p_main"> &nbsp;&nbsp;You will be prompted to install a template, I used PiGRRL Zero, but either should be fine. You don't have to reboot yet.</p>
+        <p class="content_p_main"> > Open the config file with the line below, and set the GPIO pins to the keybinds seen in the final photo below, there will be unused keybinds that should be deleted from the template so they don't interfere with other GPIO pins, open the photo in another tab if necessary.  save, exit, and reboot. (CTRL+X), (sudo reboot).</p>
+        <p class="content_p_main"> > You can now test the buttons by using a jumper wire to short a GPIO pin to GND, emulation station should respond, you can further configure the buttons there.</p>
+
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/pokeboy/g1.png" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/pokeboy/g1.png" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/pokeboy/g2.png" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/pokeboy/g3.png" alt="Thumbnail 3" class="thumbnail" data-index="2">
+            </div>
+        </div>
+
+        <p class="content_p_heading"> Roms</p>
+        <p class="content_p_main"> > I probably can't tell you how you can go onto reddit r/roms and pick one of those websites in the info tab on the right under the rules to download games... so I won't</p>
+        <p class="content_p_main"> > What I can do is provide a link to WinSCP so you can drag and drop files from your computer to the Pi over SSH</p>
+        <p class="content_p_main"> > Launch WinSCP, select New Site, then enter pokeboy for both Host name and User name, then save and ok.</p>
+        <p class="content_p_main"> > Click login and enter the password to access the Pi.  The left side should be your computer and the right should be the pokeboy.  On the left, navigate to where your games are.  Then on the right, go to Retropie -> Roms then select the console you want to emulate.  Drag and drop the game from left to right and reboot after its done downloading.</p>
+
+        <div class="link-box-container">
+            <a href="https://winscp.net/eng/download.php" class="link-box-pcbway">
+                <p>WinSCP</p>
+            </a>
+        </div>  
+
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/pokeboy/i1.png" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/pokeboy/i1.png" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/pokeboy/i2.png" alt="Thumbnail 2" class="thumbnail" data-index="1">
+            </div>
+        </div>
+
+        <p class="content_p_main"> > </p>
+
 
     </div>
 
