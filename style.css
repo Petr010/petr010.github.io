@@ -153,13 +153,16 @@
     font-family: 'Comic Sans MS', 'Comic Neue', consolas;
     font-size: 2rem;
     width: 100%; /* Full width */
-    text-align: center; /* Center text */
+    text-align: center; /* left text */
 }
 
 /* for contentpage */
 .content_p_main {
+    align-self: flex-start;
+    text-align: left;
+    text-indent: -18px;
     color: #000000; 
-    padding:10px 0px 10px 0px;
+    padding:10px 10px 10px 28px;
     font-size: 1.5rem;
 }
 
@@ -168,6 +171,14 @@
     color: #333;
     padding:15px 0px 25px 0px;
     font-size: 1.25rem;
+}
+
+.content_p_heading {
+    align-self: flex-start;
+    font-style: italic;
+    color: #000000;
+    padding:10px 0px 10px 8px;
+    font-size: 5rem;
 }
 
 .content__menu {
@@ -293,6 +304,33 @@
 .link-box:hover {
     transform: scale(1.05); /* Slightly enlarge on hover */
     box-shadow: 0px 4px 8px rgba(119, 0, 255, 0.2); /* Add shadow on hover */
+}
+
+.link-box-container {
+    display: flex;
+    gap: 20px; /* Adjust gap between buttons */
+    padding: 20px;
+  }  
+
+.link-box-pcbway {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+    display: flex;
+    align-items: flex-start; /* Align content to the top */
+    font-weight: bold;
+    line-height: 2;
+    padding: 20px;
+    background: rgba(0, 255, 34, 0.25); /* Grey background with 0.25 opacity */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effects */
+    cursor: pointer; /* Make entire box clickable */
+    outline: 4px solid rgb(0, 0, 0); /* outline with 5px width */
+}
+
+.link-box-pcbway:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0px 4px 8px rgba(119, 0, 255, 0.2); /* Add shadow on hover */
+    color: #7700ff;
 }
 
 .link-image {
