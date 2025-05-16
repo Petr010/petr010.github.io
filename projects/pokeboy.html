@@ -165,6 +165,7 @@
         </div>
 
         <p class="content_p_heading"> Display</p>
+        <p class="content_p_main"> > *NOTE* the default drivers are actually terrible. It is definitely playable but at like 5 frames per second, which is bad.  I recommend doing this step if you feel like the section "Display (ADVANCE)" is too difficult or if you simply just want to make sure that the display actually works first.  Otherwise, skip to "Display (ADVANCE)"</p>
         <p class="content_p_main"> > We'll install the drivers for the display next.  The LCD will likely come with a set of instructions, below are the commands required for the LCD I attached in the BOM *note, they have multiple variants of this screen, select the final command dependant on your variant*.</p>
         <p class="content_p_2nd">sudo rm -rf LCD-show</p>
         <p class="content_p_2nd">git clone https://github.com/goodtft/LCD-show.git</p>
@@ -186,6 +187,36 @@
                 <img src="../images/pokeboy/l4.png" alt="Thumbnail 5" class="thumbnail" data-index="4">
             </div>
         </div>
+
+        <p class="content_p_heading"> Display (ADVANCE) </p>
+        <p class="content_p_main"> > So the default drivers that comes with the display's instructions are actually terrible.  The screen uses the SPI protocal which is a method to speak with the screen, and its kind of slow.  That means we can't send a bunch of data to it too quickly, which is what the default drivers do.</p>
+        <p class="content_p_main"> > In this section, I will link a VERY helpful video by Bytes N Bits.  They will walk us through the uninstallation of the default drivers (if you installed them) and to build/run some custom drivers.  The key difference is that the new drivers will only update the pixels on the screen that changes color instead of the whole screen, which means we only need to send very little data at a time allowing for the screen to update faster.</p>
+        <p class="content_p_main"> > In the video below, there is a line of code that is specific to your screen, my screen uses the "ILI9486" chip (most of them will), so my cmake line looks like this: </p>
+        <p class="content_p_2nd">cmake -DWAVESHARE35B_ILI9486=ON -DSPI_BUS_CLOCK_DIVISOR=20 -DSTATISTICS=0 ..</p>
+        <div class="video-container">
+            <iframe 
+              src="https://youtube.com/embed/w1PQXpp6jC8?si=IpYxFfIqi4a0jgMZ" 
+              title="Fastest FPS on Your Raspberry Pi SPI LCD Screen - RetroPie playable on a cheap LCD panel" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+        </div> 
+        <p class="content_p_main"> > Unfortunately, I do not think that the video covered how to make the driver autostart, to do that, we need to go back into the rc.local folder, and tell it to automatically run.</p>
+        <p class="content_p_2nd">sudo nano /etc/rc.local</p>
+        <p class="content_p_main"> > *NOTE* In the photo below, my unit is named the petrboy, but you would use pokeboy or whatever you set the username to be</p>
+        <p class="content_p_main"> > Then, under where it says "sleep 7" add the following line: </p>
+        <p class="content_p_2nd">sudo /home/pokeboy/fbcp-ili9341/build/fbcp-ili9341 &</p>
+        <div class="carousel-main">
+            <img id="current-image" src="../images/pokeboy/displayA.png" alt="Current Slide">
+        </div>
+        <p class="content_p_main"> > If you run into problems, check out the github below for more options/details on the custom driver, and do not hesitate to email me questions if you do get stuck!</p>
+        <div class="link-box-container">
+            <a href="https://github.com/juj/fbcp-ili9341?tab=readme-ov-file" class="link-box-pcbway">
+                <p>GitHub - DIY Display Driver</p>
+            </a>
+        </div>  
+        
 
         <p class="content_p_heading"> Pinout Note</p>
         <p class="content_p_main"> > The next steps, it might be helpful to have a breadboard, that way you can test the audio and button setups... or you can blindly trust these instructions because we're both just that good.</p>
@@ -437,7 +468,7 @@
         <p class="content_p_heading"> Closing Notes </p>
         <p class="content_p_main"> > I doubt anyone would read this far, but if you did, THANK YOU! This was an exciting opportunity given to be by PCBWAY, and I couldn't have asked for a better first project with them.</p>
         <p class="content_p_main"> > There are plenty of things wrong with this project though, such as a better adhesive than epoxy would be nice.  I think using silicon between the ring and the top insert might be a good idea but it could be messy and am unsure how that would hold up.</p>
-        <p class="content_p_main"> > The performance of the emulations are lackluster, I think if you overclock the system it would be better, but that might cause too much strain on the battery and a heatsink would be required... but the system is enclosed in a tin ball so I am unsure how effect that heat dissipation would be.</p>
+        <p class="content_p_main"> > I think if you overclock the system it would yield better performance, but that might cause too much strain on the battery and a heatsink would be required... but the system is enclosed in a tin ball so I am unsure how effect that heat dissipation would be either way.</p>
         <p class="content_p_main"> > I definitely would source a better battery, 2000mAh might not last long enough and the ball can definitely fit a bigger battery.</p>
         <p class="content_p_main"> > Other than that, this was a really fun project to do, and in a way, you can finally catch your own Pokémon in a Pokéball! haha</p>
 
