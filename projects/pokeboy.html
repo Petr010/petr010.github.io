@@ -67,7 +67,7 @@
         </div>
         <p class="content_p_main"> > Welcome to the PokéBoy project!  With the help of PCBWAY as the project sponsor, I developed a retropie project that would fit inside a standard store bought TCG Pokéball, because what else are you going to do with it?.</p> 
         <p class="content_p_main"> > This page will serve as a build guide if you ever wanted to make one, *I am not responsible for whatever outcome that might occur; like if you anger Arceus, that's not on me*</p>       
-        <p class="content_p_main"> > Before we start, I highly recommend watching the full video on the PokéBoy below for a general overview of the build. </p>       
+        <p class="content_p_main"> > Before we start, I highly recommend watching the full video on the PokéBoy below for a general overview of the build.  Also keep in mind that this isn't really the ideal console to play on, there are no LED indicator to tell you when it's low, and play time is low (2-3hrs) off the battery so it might need to stay plugged in.  If you did the display (advanced) step, the screen will start glitching out at low power so that in itself is a power indicator lol.  It is still a cool and fun build though, so have fun if you just like the novelty!</p>       
         
         <div class="video-container">
             <iframe 
@@ -193,6 +193,7 @@
         <p class="content_p_main"> > In this section, I will link a VERY helpful video by Bytes N Bits.  They will walk us through the uninstallation of the default drivers (if you installed them) and to build/run some custom drivers.  The key difference is that the new drivers will only update the pixels on the screen that changes color instead of the whole screen, which means we only need to send very little data at a time allowing for the screen to update faster.</p>
         <p class="content_p_main"> > In the video below, there is a line of code that is specific to your screen, my screen uses the "ILI9486" chip (most of them will), so my cmake line looks like this: </p>
         <p class="content_p_2nd">cmake -DWAVESHARE35B_ILI9486=ON -DSPI_BUS_CLOCK_DIVISOR=20 -DSTATISTICS=0 ..</p>
+        <p class="content_p_main"> &nbsp;&nbsp;*note* play with divisor value, I found that below 20, the screen got glitchy, also keep the ball plugged in while doing this, I don't think the battery is enough to run make -j.  </p>
         <div class="video-container">
             <iframe 
               src="https://youtube.com/embed/w1PQXpp6jC8?si=IpYxFfIqi4a0jgMZ" 
@@ -466,10 +467,12 @@
         </div>
 
         <p class="content_p_heading"> Closing Notes </p>
+        <p class="content_p_main"> > *FOR SAVE FILES* If you plan to play a game with a save file like pokemon, you need to save, then exit the game (press start and select at the same time) to save the file, it will not save if the ball powers down before exiting.</p>
         <p class="content_p_main"> > I doubt anyone would read this far, but if you did, THANK YOU! This was an exciting opportunity given to be by PCBWAY, and I couldn't have asked for a better first project with them.</p>
         <p class="content_p_main"> > There are plenty of things wrong with this project though, such as a better adhesive than epoxy would be nice.  I think using silicon between the ring and the top insert might be a good idea but it could be messy and am unsure how that would hold up.</p>
         <p class="content_p_main"> > I think if you overclock the system it would yield better performance, but that might cause too much strain on the battery and a heatsink would be required... but the system is enclosed in a tin ball so I am unsure how effect that heat dissipation would be either way.</p>
-        <p class="content_p_main"> > I definitely would source a better battery, 2000mAh might not last long enough and the ball can definitely fit a bigger battery.</p>
+        <p class="content_p_main"> > I definitely would source a better battery, 2000mAh might not last long enough for the best gameplay (about 2-3hrs) and the ball can definitely fit a bigger battery.  Just make sure the voltages are compatible with the charinging module.</p>
+        <p class="content_p_main"> > There is also no real power indicator since I did not really have enough time to design that, but it's probablt possible.  If you did the "Display ADVANCE" step, the screen does start glitching out when the power gets low, so I suppose that can be used as a bad power indicator haha.</p>
         <p class="content_p_main"> > Other than that, this was a really fun project to do, and in a way, you can finally catch your own Pokémon in a Pokéball! haha</p>
 
         <p class="content_p_heading"> Additional Resources That Helped Me </p>
