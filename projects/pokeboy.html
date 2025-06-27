@@ -95,6 +95,8 @@
             </a>
         </div>  
         
+        <p class="content_p_main"> > Tools you will need: soldering iron, solder, epoxy, files, and thin wires.  A breadboard and multimeter are also helpful. </p>
+
         <p class="content_p_heading"> Setting Up The Pi </p>  
         <p class="content_p_main"> > We can't solder all of the headers onto the Pi because we need to leave room for the other wires later, leave the first row clear, solder on the next 6 rows, leave the next one clear, then solder on the next 5 rows and leave the rest clear.</p>
 
@@ -136,6 +138,7 @@
         <p class="content_p_2nd">ssh pokeboy@pokeboy.local </p>
         <p class="content_p_main"> &nbsp;&nbsp;You will be prompted to set up the fingerprint, type "yes", then enter your password to the Pi  </p>
         
+        <br>
         <div class="carousel">
             <div class="carousel-main">
                 <img id="current-image" src="../images/pokeboy/s1.png" alt="Current Slide">
@@ -146,6 +149,29 @@
             </div>
         </div>
 
+        <br>
+        <p class="content_p_main"> > Here is a helpful video to follow along.  The steps are not exactly 1:1 but it should help! </p>
+        <div class="video-container">
+            <iframe 
+              src="https://youtube.com/embed/rGygESilg8w?si=GBBfanN_Ol_TxSuU" 
+              title="SSH setup" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+        </div>  
+        
+        <p class="content_p_main"> > If you still have trouble, install retropie as normal and configure SSH later (you will need to plug in an external monitor and keyboard for this)</p>
+        <div class="video-container">
+            <iframe 
+              src="https://youtube.com/embed/fsRkTlv5rxw?si=mWIGmcS2clBHwlDV" 
+              title="SSH setup" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+        </div>  
+        
         <p class="content_p_main"> > Next, we'll install and update the firmware to the Pi.  Run:</p>
         <p class="content_p_2nd">sudo ./Retropie-Setup/retropie_setup.sh</p>
         <p class="content_p_main"> &nbsp;&nbsp;then select the basic install, followed by the update afterwords </p>
@@ -233,7 +259,7 @@
         <p class="content_p_main"> &nbsp;&nbsp;then scroll to the bottom to add the following line:</p>
         <p class="content_p_2nd">dtoverlay=audremap</p>
         <p class="content_p_main"> &nbsp;&nbsp;this will automatically set the audio pin to GPIO 13.  You can then save and exit (CTRL+X).</p>
-        <p class="content_p_main"> > Then, run the following:</p>
+        <p class="content_p_main"> > Reboot, then, run the following:</p>
         <p class="content_p_2nd">sudo raspi-config</p>
         <p class="content_p_main"> &nbsp;&nbsp;this opens a menu to set the default audio output, you want to select "System Options", "Audio", "Headphones".  After the confirmation page, you can cancel -> back -> finish.</p>
         <p class="content_p_main"> > You can reboot with the "sudo reboot" command or just powerdown and turn the pi back in, remember to SSH back in.  From here, you can test the audio by temporarily wiring up the speaker directly to GPIO 13 and GND, then run the following line to play a test audio.</p>
@@ -259,7 +285,9 @@
         <p class="content_p_2nd">sudo bash retrogame.sh</p>
         <p class="content_p_main"> &nbsp;&nbsp;You will be prompted to install a template, I used PiGRRL Zero, but either should be fine. You don't have to reboot yet.</p>
         <p class="content_p_main"> > Open the config file with the line below, and set the GPIO pins to the keybinds seen in the final photo below, there will be unused keybinds that should be deleted from the template so they don't interfere with other GPIO pins, open the photo in another tab if necessary.  save, exit, and reboot. (CTRL+X), (sudo reboot).</p>
-        <p class="content_p_main"> > You can now test the buttons by using a jumper wire to short a GPIO pin to GND, emulation station should respond, you can further configure the buttons there.</p>
+        <p class="content_p_2nd">sudo nano /boot/retrogame.cfg</p>
+        <p class="content_p_2nd">sudo reboot</p>
+        <p class="content_p_main"> > &nbsp;&nbsp;You can now test the buttons by using a jumper wire to short a GPIO pin to GND, emulation station should respond, you can further configure the buttons there.</p>
 
         <div class="carousel">
             <div class="carousel-main">
@@ -310,7 +338,7 @@
             </div>
         </div>
 
-        <p class="content_p_main"> > Solder the headers onto the boost converter, amplifier and battery charging module, leaving the two inner pinouts of the charger vacant to apply the battery later, then solder them to the board along with the buttons, P-Mos, resistor, and diode (I recommend making sure the P-Mos legs match the pinout on the PCB)</p>
+        <p class="content_p_main"> > Solder the headers onto the boost converter, amplifier and battery charging module. Leave the two inner pinouts of the battery charger vacant to apply the battery later (see pic 2 below).  Then solder the modules to the board along with the buttons, P-Mos, 10k resistor, and diode (I recommend making sure the P-Mos legs, G-D-S, match the pinout on the PCB)</p>
         <p class="content_p_main"> > Solder the speaker down within the circle drawn on the PCB, if you use short CAT5 wires, it will be thick enough to stay down without double sided tape.</p>
 
         <div class="carousel">
