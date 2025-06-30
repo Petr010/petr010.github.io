@@ -412,6 +412,7 @@
         <p class="content_p_heading"> Power Button </p>
         <p class="content_p_main"> > The power button is simple whether you get a 4 leg or 5 leg button.  Two of the legs allow you to pass a connection when the button is pushed.  The other two are the positive and negative of the LED inside the button.  I recommend using some low valued resistor (about 250-500 Ohms) between the output of the button and the positive of the LED to restrict current draw.</p>
         <p class="content_p_main"> > You can use any wire that is thick enough to handle power to solder to the output and ground on the button, then put on the faux button and screw it onto the ring, keep the top half of the pokéball off</p>
+        <p class="content_p_main"> > If you are using a 5 legged button, it might be too long to fit without trimming the legs.  In this case it might be hard to fit the resistor.  It should be fine to wire "+"" and "NO" together without the resistor, but to ensure limited current, I recommend extending the "NO" wire and attach the resisotr between that and 5Vout.  You can also just short "NO and +" and add the resistor to the "-" line then to gnd on the raspberry Pi.  In both cases, use heat shrink tubing/electrical tape on the resistor to prevent shorts. </p>
 
         <div class="carousel">
             <div class="carousel-main">
@@ -420,6 +421,7 @@
             <div class="carousel-thumbnails">
                 <img src="../images/pokeboy/IMG_9375.PNG" alt="Thumbnail 1" class="thumbnail active" data-index="0">
                 <img src="../images/pokeboy/IMG_9378.JPG" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/pokeboy/wiring2.png" alt="Thumbnail 3" class="thumbnail" data-index="2">
             </div>
         </div>
 
