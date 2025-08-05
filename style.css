@@ -8,6 +8,11 @@
     --navbar-width: 300px;
 }
 
+@font-face {
+  font-family: 'SauceSans';
+  src: url('font/Sauce_Sans.ttf') format('truetype');
+}
+
 /* for navbar */
 .navbar {
     background-color: black;
