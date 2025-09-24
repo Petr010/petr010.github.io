@@ -180,6 +180,8 @@
         <p class="content_p_2nd">sudo apt update</p>
         <p class="content_p_2nd">sudo apt upgrade</p>
 
+        <p class="content_p_main"> > We want the emulator to launch from boot, so re-enter the startup menu with ..retropie_setup.sh, select configuration, select autostart, and select the first option to startup emulation station at boot.  After the confirmation page, you can select ok -> cancel -> exit.</p>
+
         <div class="carousel">
             <div class="carousel-main">
                 <img id="current-image" src="../images/pokeboy/f2.png" alt="Current Slide">
@@ -187,6 +189,10 @@
             <div class="carousel-thumbnails">
                 <img src="../images/pokeboy/f2.png" alt="Thumbnail 1" class="thumbnail active" data-index="0">
                 <img src="../images/pokeboy/f1.png" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/pokeboy/l2.png" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="../images/pokeboy/ddd1.png" alt="Thumbnail 4" class="thumbnail" data-index="3">
+                <img src="../images/pokeboy/l3.png" alt="Thumbnail 5" class="thumbnail" data-index="5">
+                <img src="../images/pokeboy/l4.png" alt="Thumbnail 6" class="thumbnail" data-index="6">
             </div>
         </div>
 
@@ -198,8 +204,8 @@
         <p class="content_p_2nd">chmod -R 755 LCD-show</p>
         <p class="content_p_2nd">cd LCD-show/</p>
         <p class="content_p_2nd">sudo ./MHS35-show  <strong>*OR*</strong> sudo ./LCD35-show <strong>*OR*</strong> other</p>
-        <p class="content_p_main"> > Disconnect the Pi, plug the display onto the Pi aligning the bottom headers (remember the top row should be missing), then power the Pi back on and reconnect with SSH.  The display should show a basic terminal.</p>
-        <p class="content_p_main"> > We want the emulator to launch from boot, so re-enter the startup menu, select configuration, and select the first option to startup emulation station at boot.  After the confirmation page, you can select ok -> cancel -> exit.</p>
+        <p class="content_p_main"> > Disconnect the Pi, plug the display onto the Pi aligning the bottom headers (remember the top row should be missing), then power the Pi back on and reconnect with SSH.  The display should show emulation station after a brief white screen.</p>
+        
 
         <div class="carousel">
             <div class="carousel-main">
@@ -208,9 +214,6 @@
             <div class="carousel-thumbnails">
                 <img src="../images/pokeboy/l1.png" alt="Thumbnail 1" class="thumbnail active" data-index="0">
                 <img src="../images/pokeboy/IMG_9369.JPG" alt="Thumbnail 2" class="thumbnail" data-index="1">
-                <img src="../images/pokeboy/l2.png" alt="Thumbnail 3" class="thumbnail" data-index="2">
-                <img src="../images/pokeboy/l3.png" alt="Thumbnail 4" class="thumbnail" data-index="3">
-                <img src="../images/pokeboy/l4.png" alt="Thumbnail 5" class="thumbnail" data-index="4">
             </div>
         </div>
 
@@ -244,6 +247,7 @@
             </a>
         </div>  
         
+        <p class="content_p_main"> > p.s. if there is a black border on your screen, you can increase screen resolution.  Once in Emulation Station, select "RetroPie", then "RASPI-CONFIG", then select "display options", and select "default", then reboot.  If that doesn't work, select a different resolution and change back, idk its weird like that. </p>
 
         <p class="content_p_heading"> Pinout Note</p>
         <p class="content_p_main"> > The next steps, it might be helpful to have a breadboard, that way you can test the audio and button setups... or you can blindly trust these instructions because we're both just that good.</p>
