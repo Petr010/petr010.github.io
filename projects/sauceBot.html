@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTr's Projects</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/c6bdd07d00.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__terminal">
+            <p><span style="color: white;">❯_ </span>nav terminal</p>
+            <!-- Use the navbar__toggle button for toggling -->
+            <span class="navbar__toggle close-btn" onclick="toggleNavbar()">X</span>
+        </div>
+
+        <div><a href="/" id="navbar__logo">C:PeTr> </a></div>
+        
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/projects.html" class="navbar__links"> Projects </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/highlights.html" class="navbar__links"> C:\Highlights> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/fun.html" class="navbar__links"> C:\Fun!> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/contact.html" class="button"> C:\Contact_Me> </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Reopen button, hidden initially -->
+    <div class="navbar__toggle reopen-box" id="reopenBox" onclick="toggleNavbar()">>_</div>
+
+    <div class="background-container">
+        <div class="background-image"></div>
+        <div class="background-image"></div>
+    </div>
+    <div class = "content">
+        <h1>Sauce Bot</h1> 
+        <p class="content_p_2nd"> This page is for the 67kV robot that I made,</p>
+        <ul class="content__menu">  
+            <li class="content__item">
+                <a href="../projects/os25.html" class="content__links">
+                    <div class="link-box">
+                        <img src="../images/os25/o1.jpg" alt="os25" class="link-image">
+                        <div class="link-content">
+                            <h2 class="link-title">Open Sauce 2025</h2>
+                            <p class="link-description">click here to see my time volunteering at Open Sauce!</p>
+                        </div>
+                    </div>
+                </a>  
+            </li>
+        </ul>      
+        <div class="video-container">
+                    <video controls>
+                        <source src="../images/os25/test.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>  
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/projects.jpg" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/os25/1.jpg" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/os25/3.jpg" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/os25/3_25.PNG" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="../images/os25/3_5.JPG" alt="Thumbnail 4" class="thumbnail" data-index="3">
+                <img src="../images/os25/4.jpg" alt="Thumbnail 6" class="thumbnail" data-index="4">
+                <img src="../images/os25/5.JPG" alt="Thumbnail 7" class="thumbnail" data-index="5">
+                <img src="../images/os25/6.jpg" alt="Thumbnail 8" class="thumbnail" data-index="6">
+                <img src="../images/os25/7.JPG" alt="Thumbnail 9" class="thumbnail" data-index="7">
+                <img src="../images/os25/8.JPG" alt="Thumbnail 10" class="thumbnail" data-index="8">
+                <img src="../images/os25/9.JPG" alt="Thumbnail 11" class="thumbnail" data-index="9">
+                <img src="../images/os25/goat.jpg" alt="Thumbnail 12" class="thumbnail" data-index="10">
+                <img src="../images/os25/11.jpeg" alt="Thumbnail 13" class="thumbnail" data-index="11">
+                <img src="../images/os25/12.jpeg" alt="Thumbnail 14" class="thumbnail" data-index="12">
+            </div>
+        </div>
+        <p class="content_p_main"> > This project was probably one of the most rushed and fun projects I have worked on thus far.  In just a single week, I printed, tested, coded, and fried a robot capable of delivering 67kV across its antennas.<p>
+        <p class="content_p_main"> > As inspired by youtube channel "The Plasma Channel", it all starts with an arc-lighter, this alone is estimated to do about 4kV.  To generate a more sizable spark gap, a Cockcroft-Walton voltage multiplier was applied at 8 stages of capacitors to generated a theoretical 67kV.<p>
+        <p class="content_p_main"> > This should have been able to produce an arc within a spark gap of 3 inches, however, my lightening tower only got about an inch of a gap.  I think this was mainly due to my lack of a sizable top load to increase surface charge.  Instead I just had two sharp ends of a wire pointing at each other, leading to premature corona discharge.  The CW-VM was covered in epoxy but this had not helped.<p>
+        <p class="content_p_main"> > I then wanted to automate the sparking through a sequence, so an arduino would be used to display a show with a single press of a button.  First, Sauce Bot would release an audio signal out the speakers from it's buttcheeks, then its eyes will light up and flash.  A turn on sequence is sent to the arc-lighter to wake it up, the servos would turn the arms up, and then a spark would release.  The arduino would send a turn-off signal to the lighter, arms would return down, led eyes would turn off and the audio would stop playing.<p>
+        <p class="content_p_main"> > A technicality that must be avoided was for potential voltage spikes caused by the high voltage, thus the arc lighter and the arduino were kept electrically seperated during all times of operation.  A switch ganger system was design such that the two systems are joined in the off-state for simultaneous charging.  Then they would be completely disconnected when switched to the on-state.  I researched and learned about the optocoupler (basically an LED and photosensor), which allows me to control the arc-lighter with the arduino, without having an electrical connection.<p>
+        <p class="content_p_main"> > There were two key oversights with this project.  The first was the discovery that the USB-C charging port on the primary battery also worked as a charger.  So wiring the arc-lighter and logic charging ports together caused the logic port to constantly charge the arc-lighter in the off-state.  The solution was to add a dedicated switch for charging.<p>
+        <p class="content_p_main"> > The second dilemma was more serious.  Unit testing and testing in a wide open environment showed great promise, but in encaseing everything into a plastic shell, the high voltage sent electro-magnetic interference down some of the logic wires and forced reset the arduino.  This caused the bootloader to corrupt, but the original programming remained intact.  This lead to the inability to reflash the arduino, and since the arduino paused mid-spark, the shutdown sequence could not run, making it highly dangerous.  There was no time to EMI shield as the flight was within less than an hour of project completion.  <p>
+        <p class="content_p_main"> > The solution was to add aluminum foil balls to the antennas to reduce the rate of sparking, which was enough to keep the arduino alive... sometimes.<p>
+        <p class="content_p_main"> > I had a lot of fun at Open Sauce and eventually got to give Sauce Bot to the event's founder, and my childhood bad-role-model, William Osman!<p>
+        <p class="content_p_main"> > Since the original model was too dangerous, I made one that will shock eyes instead of people.  I made the model simpler to put together, and kept it hollow for LED strips to illiminate the bot.  The eyes could be wired in series with the LED strip too for added effect.  The arms articulate and self lock in any orientation.</p>    
+        <div class="link-box-container">
+            <a href="https://www.thingiverse.com/thing:7101348" class="link-box-pcbway"  >
+                <p>Sauce Bot CAD Files</p>
+            </a>
+        </div>    
+        <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/75GVQ3Q78ac?si=ZvCUfqRUhlJx1jBr" 
+              title="I build a 67000 volt robot that fries its own circuits!" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>    
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="../app.js"></script>
+</body>
+</html>

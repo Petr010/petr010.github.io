@@ -1,0 +1,47 @@
+import sounddevice as sd
+import numpy as np
+import queue
+import speech_recognition as sr
+
+# Queue for audio data
+q = queue.Queue()
+
+# Counter for "pear"
+pear_count = 0
+
+# Recognizer
+recognizer = sr.Recognizer()
+
+def callback(indata, frames, time, status):
+    if status:
+        print("Stream status:", status)
+    q.put(indata.copy())
+
+def listen_and_count(device=None):
+    global pear_count
+    
+    # Open audio input stream (from Stereo Mix / VB-Cable / Realtek loopback)
+    with sd.InputStream(samplerate=16000, channels=1, device=device, callback=callback):
+        print("🎧 Listening to system output for 'pear'... (Ctrl+C to stop)")
+        while True:
+            data = q.get()
+            audio_data = sr.AudioData(data.tobytes(), 16000, 2)
+
+            try:
+                text = recognizer.recognize_google(audio_data).lower()
+                print("Heard:", text)
+
+                if "pear" in text:
+                    pear_count += 1
+                    print(f"🍐 Found 'pear'! Count = {pear_count}")
+
+            except sr.UnknownValueError:
+                pass
+            except sr.RequestError as e:
+                print("API error:", e)
+
+if __name__ == "__main__":
+    # List available devices
+    print(sd.query_devices())
+    # Replace with the index of "Stereo Mix" or "Speakers (Realtek(R) Audio)"
+    listen_and_count(device=20)

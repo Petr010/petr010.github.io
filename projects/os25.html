@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTr's Projects</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/c6bdd07d00.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__terminal">
+            <p><span style="color: white;">❯_ </span>nav terminal</p>
+            <!-- Use the navbar__toggle button for toggling -->
+            <span class="navbar__toggle close-btn" onclick="toggleNavbar()">X</span>
+        </div>
+
+        <div><a href="/" id="navbar__logo">C:PeTr> </a></div>
+        
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/projects.html" class="navbar__links"> C:\Projects </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/highlights.html" class="navbar__links"> Highlights> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/fun.html" class="navbar__links"> C:\Fun!> </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/contact.html" class="button"> C:\Contact_Me> </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Reopen button, hidden initially -->
+    <div class="navbar__toggle reopen-box" id="reopenBox" onclick="toggleNavbar()">>_</div>
+
+    <div class="background-container">
+        <div class="background-image"></div>
+        <div class="background-image"></div>
+    </div>
+    <div class = "content">
+        <h1>Open Sauce 2025</h1> 
+        <p class="content_p_2nd"> This page is for my time volunteering at Open Sauce,</p>
+        <ul class="content__menu">  
+            <li class="content__item">
+                <a href="../projects/sauceBot.html" class="content__links">
+                    <div class="link-box">
+                        <img src="../images/os25/1.jpg" alt="os25" class="link-image">
+                        <div class="link-content">
+                            <h2 class="link-title">Sauce Bot</h2>
+                            <p class="link-description">click here for the 67kV robot that k!lls itself!</p>
+                        </div>
+                    </div>
+                </a>  
+            </li>
+        </ul>  
+        <div class="carousel">
+            <div class="carousel-main">
+                <img id="current-image" src="../images/projects.jpg" alt="Current Slide">
+            </div>
+            <div class="carousel-thumbnails">
+                <img src="../images/os25/o1.jpg" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="../images/os25/goat.jpg" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="../images/os25/o3.jpg" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="../images/os25/o4.jpg" alt="Thumbnail 4" class="thumbnail" data-index="3">
+                <img src="../images/os25/o5.JPG" alt="Thumbnail 5" class="thumbnail" data-index="4">
+                <img src="../images/os25/o6.jpg" alt="Thumbnail 6" class="thumbnail" data-index="5">
+                <img src="../images/os25/o7.JPG" alt="Thumbnail 7" class="thumbnail" data-index="6">
+                <img src="../images/os25/o8.jpg" alt="Thumbnail 8" class="thumbnail" data-index="7">
+                <img src="../images/os25/o9.JPG" alt="Thumbnail 9" class="thumbnail" data-index="8">
+                <img src="../images/os25/o10.JPG" alt="Thumbnail 10" class="thumbnail" data-index="9">
+                <img src="../images/os25/o11.JPG" alt="Thumbnail 11" class="thumbnail" data-index="10">
+            </div>
+        </div>
+        <p class="content_p_main"> > By far the best experience I have ever had.  Not only did I get to experience the greatest gathering of makers to have ever been made... I got to work it!<p>
+        <p class="content_p_main"> > This is also the best place to meet your favorite creators, such as my childhood bad-role-model, William Osman.  His videos meant a lot to me as a kid, so to be able to be part of such a show makes the experience ever more special to me.<p>
+        <p class="content_p_main"> > I also go to meet and work with so many like minded individuals.  Everyone is so talanted in their crafts and it just makes me want to be an even better maker.<p>
+        <p class="content_p_main"> > All of the things exhibited at the even was nothing short of amazing, and truly brings out the highest extent of human creativity and insanity.</p>
+        <p class="content_p_main"> > Oh yeah, and the work that I did... tbh you can read about that on my resume.  It was mostly grunt work anyway.  Like the thousands of badges we had to hook onto lanyards, the hundreds of cars to redirect, the crowds of people we had to sign in, and the tens of thousands of pamphlets we had to correct by hand because we weren't allowed to have [energy drink name redacted] sponsor us because [popular soft drink] was sponsoring the venue.<p>
+        <p class="content_p_main"> > Anyway, if anyone is reading this, I highly encourage that you visit Open Sauce, follow the link below!<p>
+        <div class="link-box-container">
+            <a href="https://opensauce.com/tickets/" class="link-box-pcbway"  >
+                <p>Open Sauce Tickets</p>
+            </a>
+        </div>    
+        <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/75GVQ3Q78ac?si=ZvCUfqRUhlJx1jBr" 
+              title="I build a 67000 volt robot that fries its own circuits!" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>    
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="../app.js"></script>
+</body>
+</html>
